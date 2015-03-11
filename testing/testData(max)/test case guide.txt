@@ -1,0 +1,99 @@
+//basic location report
+test case: input param floor:3, 
+1. date: 2014-10-02 12:15:30
+% should show 34% each
+3 M, 3 SIS, 2 x 2013, 1 x 2011
+
+// top k pop places
+1. date = 2014-10-03 12:15:00
+
+validate that results should contain latest location update
+lid: 1002 -l3 study area 1- 5 pax
+lid 702 -sr3-3- 3 pax
+lid 102 -l3 lobby- 1 pax
+
+
+//top k companion 
+1. Validate that results display users that are colocated 
+with the queried mac address in the same locationid
+
+semantic place: SMUSISL3STUDYAREA1 (1002)
+macADd - a123456789012345678901234567890
+date: 2014-10-03 12:25:00
+5 bogus macadd
+A spends 9 mins in 1002
+
+1. b123456789012345678901234567890 - 540s
+1. d123456789012345678901234567890 - 540s
+2. c123456789012345678901234567890 - 360s
+
+C continues to spend time with A for 3 mins after he is relocated to lid 702
+
+
+2. validate that if there are mulitple users who spend the 
+same time together as the queried macaddress, they will have the 
+same rank and are sorted accordingly, rank also must not be "skipped"
+
+1. b123456789012345678901234567890 - 540s
+1. d123456789012345678901234567890 - 540s
+2. c123456789012345678901234567890 - 180s
+
+//top k next places:
+continue with the data from top k pop places
+
+Validate that users from the queried time are from the 
+latest update and they spend at least 5mins in the next place. 
+The next place must also be the last eligible place. 
+Ensure sorting is accurate, % column should be shown
+
+value = 3
+origin: SMUSISL3STUDYAREA1
+date: 2014-10-03 12:25:00
+
+A,C should not be counted
+
+B counted, D counted, aa counted, ba ca da ea counted
+
+1. 802 -SR 3-2 - 3, 34%
+2. 102 -lobby - 1, 12%
+2. 702 - SR 3-3  - 1, 12%
+
+//AGD
+Validate that groups can be detected even when they spend 12 mins together 
+while "moving" to different locations
+
+
+
+date: 2014-10-05 13:25:00
+
+A spends 2mins at 101, 5min 302, 7min59s 702
+B spends 2mins 101, 5min 302, 7min59s 702
+C spends 1min 101, 4min 302, 6min 59s 702
+
+A+B are a grp
+
+
+Validate that 2 separate groups should be formed 
+if A and B spends > 12 mins in location 1 
+and B and C spends more than 12 mins in location 1 
+BUT A and C spends less than 12 mins together in the same location
+
+//GLR
+//top k pop place
+date: 2014-10-05 13:25:00
+
+valdiate that the results are taken from the latest semantic place per group
+
+lid 702 - SR3-3, 1 grp
+
+//top k next places
+
+validate that the last place the groups were in matches the 
+group query place, and the groups must be of the same users and 
+they must spend more than 5mins in the next semantic place
+
+
+ date: 2014-10-05 13:25:00
+ 
+ results
+ 1. A + B at SMUSISL3STUDYAREA1

@@ -1,0 +1,51 @@
+//Test1.zip
+This zip contains all the validation cases to check for when bootstrapping
+
+//demographics (14 errors, 1 success)
+
+line 3 - missing macadd
+line 4 - missing name
+line 5 - missing password
+line 6 - missing email
+line 7 - missing gender
+line 8 - invalid macadd (macadd <40)
+line 9 - invalid macadd (char g)
+line 10 - invalid pw ( <8 char)
+line 11 - invalid pw (cannot contain white space)
+line 12 - invalid email (email can only contain chars or digits and '.'
+line 13 - invalid email (wrong year 2009 only accepts 2010 to 2014)
+line 14 - invalid email (wrong school)
+line 15 - invalid email ("ntu.edu")
+line 16 - invalid gender (only one char not a string)
+line 17 - pass (gender is case sensitive)
+
+//location lookup (7 errors, 2 success)
+line 2 - ok
+line 3 - invalid locid  = locid cannot be negative
+line 4 - invalid semantic place = SMU not NTU
+line 5 - invalid locid, invalid semantic place = locid cannot be negative and semantic place cannot be 'c'
+line 6 - invalid locid = locid "101,000,003" can be read but cannot contain ','
+line 7 - invalid locid = cannot string
+line 8 - invalid semanticplace - no digit after Level or Basement
+line 9 - missing locid and semantic place
+line 10 - ok!
+
+//location (17 errors, 1 success)
+line 2 - duplicate line
+line 3 - invalid date : 2014-3-31 15:04:00 month
+line 4 - invalid date : 2014-03-1 15:04:00 day
+line 5 - invalid date : 2014-03-01 25:04:00 hour
+line 6 - invalid date : 2014-03-01 15:64:00 minute
+line 7 - invalid date : 2014-03-01 15:04:64 seconds
+line 8 - invalid date : 2014-3-36 15:04:00 day
+line 9 - invalid date : 2014-15-31 15:04:00 month
+line 10 - invalid date : 2014-03-31T15:04:00 incorrect format
+line 11 - duplicate line 
+line 12 - missing date
+line 13 - missing mac address
+line 14 - missing locationid
+line 15 - duplicate
+line 16 - invalid macadd (char 'g')
+line 17 - invalid macadd (<40)
+line 18 - invalid locationid (loc id not found in loc-lookup)
+line 19 - ok

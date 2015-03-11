@@ -1,0 +1,61 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 14, 2014, 5:02:50 PM
+    Author     : eva.tan.2013
+*/
+
+.form-group {
+    margin-right: 10px;
+}
+
+.form-group label {
+    margin-right: 5px;
+}
+
+#legend {
+    list-style: none;
+    padding-right: 0px;
+}
+
+#legend li {
+    padding-top: 5px;
+}
+
+#legend li:nth-child(1) .color-block {
+    background-color: rgb(240,249,232);
+}
+
+#legend li:nth-child(2) .color-block {
+    background-color: rgb(204,235,197);
+}
+
+#legend li:nth-child(3) .color-block {
+    background-color: rgb(168,221,181);
+}
+
+#legend li:nth-child(4) .color-block {
+    background-color: rgb(123,204,196);
+}
+
+#legend li:nth-child(5) .color-block {
+    background-color: rgb(78,179,211);
+}
+
+#legend li:nth-child(6) .color-block {
+    background-color: rgb(43,140,190);
+}
+
+#legend li:nth-child(7) .color-block {
+    background-color: rgb(8,88,158);
+}
+
+#legend .color-block {
+    display: inline-block;
+    width: 25px;
+    height: 15px;
+    margin-right: 5px;
+}
